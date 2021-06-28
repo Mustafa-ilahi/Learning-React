@@ -1,0 +1,62 @@
+const bulbSwitch = true;
+
+Binary Operators:-
+
+{!bulbSwitch && <img src="OffBulb"/>}
+{bulbSwitch && <img src="OnBulb"/>}
+
+
+Ternary Operators:-
+
+{bulbSwitch ?
+<img src="OnBulb"/>
+:
+<img src="OffBulb"/>
+} 
+
+<img src={bulbSwitch ? bulbOn : bulbOff}
+
+
+Todo Add items:
+
+const addItem = () =>{
+const tempList = [...list]; //Copying orignal state
+tempList.push(text);  //push on new array
+setList(tempList);  // Update state
+}
+
+
+Components:
+1)Agr screenWise components banayengy to src k andr  Views/Screen ka folder banega.
+1)Agr reuseable components banayengy to src k andr components ka folder banega.
+
+Note: Component name always starts with capital letter. 
+
+
+/*
+Child se parent ki state change karna:
+  1) Create a function in Parent component that will
+  update the state
+  2) Pass that function into Child component via props
+  3) Call that function on any event
+*/
+
+
+Hooks
+
+useEffect Component ki zindagi mai ek bar chlega.It takes 2 parametes one is call back function the second one is dependency list(ye wo list hoti ha jis pr useEffect dependent hoti ha)
+
+useEffect = (()=>{
+
+},[currentQuestion])
+
+dependencyList ===> currentQuestion == jb bh ye change h0ga useEffect chlega
+
+
+useEffect(() =>{},[]
+1)Intial: Kch kam krwana ho Component render ho or  sirf ek martaba. [] e.g. API requests
+2)Updation: Kch km krwana kisi state ya props ke updation pr [currentQuestion]
+3)Unmounting: Kch km krwana ho component end hone se pehle e.g: removeEventListeners.
+3==> return () => {
+	console.log('unmount')
+}
