@@ -69,7 +69,7 @@ function FacebookPost (props){
                 </div>
             </div>
             <br /><br />
-            <div>
+            <div style={{position: "relative",bottom: "20px"}}>
                 <input placeholder="Write a comment..." value={text} onChange={(e)=> {getValue(e)}} id="input-field"/>
                 {
                     editMode ? <button onClick={updateComment}>Update</button> 

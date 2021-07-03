@@ -60,3 +60,44 @@ useEffect(() =>{},[]
 3==> return () => {
 	console.log('unmount')
 }
+
+
+****** Firebase ******
+1)Goto console.firebase.com
+2)Add Project
+3)Install firebase into your project (npm install firebase)
+4)Goto project setting and choose webapp then register your app
+5)copy cdn <script> tag
+6) Create folder in src ==> named as ==> config==> firebase.js
+7)import firebase from 'firebase'
+8)Paste cdn script into firebase.js
+
+***** Firebase Authentication*****  
+1)Goto Authentication
+2)Select Email/password
+3)search==> firebase web authentication
+4)copy firebase.auth().createUserWith email wala function
+5)and same for login 
+
+
+****Steps for getting firebase authentication resposnse in components****
+
+1)**** In firebase we remove then and catch method uski jaga return lga dengy bs****
+
+
+2)const signIn = async () => {
+try{
+ const user = await login(email,password);
+setUserLoggedIn(true)
+}catch(e){
+setErrorMessage(e.message);
+}
+}
+<button onClick={()=> signIn}>Sign In </button>
+
+
+**** Adding something in database *****
+const db = firebase.firestore();
+
+db.collection('users').add({email,password})
+
