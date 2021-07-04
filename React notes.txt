@@ -96,8 +96,17 @@ setErrorMessage(e.message);
 <button onClick={()=> signIn}>Sign In </button>
 
 
-**** Adding something in database *****
+**** Adding something in firestore-database  with random id*****
 const db = firebase.firestore();
 
 db.collection('users').add({email,password})
+Note: it generates random ID
+
+
+**** Adding something in firestore-database  set ID manually*****
+db.collection('users').doc(user.uid).set({email,password})
+Note: it doesn't generates random ID
+
+
+**** Getting data from firebase ****
 

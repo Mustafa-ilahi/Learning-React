@@ -12,12 +12,13 @@ const firebaseConfig = {
   firebase.initializeApp(firebaseConfig);
 
   const db = firebase.firestore()
+
   const signUp = (email,password,fullName) => {
       firebase.auth().createUserWithEmailAndPassword(email, password)
       .then((userCredential) => {
         var user = userCredential.user;
         alert("user registered successfully");
-        db.collection('users').add({ email, fullName })
+        db.collection('users').doc(user.uid).set({email,fullName})
         .then(res => {
           alert('user info added', res)
         }).catch(e => {
@@ -28,7 +29,7 @@ const firebaseConfig = {
       .catch((error) => {
         var errorCode = error.code;
         var errorMessage = error.message;
-        alert(errorMessage);
+        console.log(errorMessage);
       });
   }
 
@@ -36,7 +37,12 @@ const firebaseConfig = {
     return firebase.auth().signInWithEmailAndPassword(email, password)
   }
 
+  function getAllUsers(){
+    return db.collection('users').get()
+  }
+
   export{
     signUp,
-    login
+    login,
+    getAllUsers
   }
