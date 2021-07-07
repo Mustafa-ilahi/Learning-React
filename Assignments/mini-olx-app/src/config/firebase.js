@@ -11,3 +11,17 @@ const firebaseConfig = {
   };
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
+
+  const adData = () => {
+      const db = firebase.firestore();
+      db.collection('users').add("mera user")
+      .then(res=>{
+          alert('ad data added',res)
+      }).catch(e=>{
+          alert(e.message)
+      })
+  } 
+  
+  export{
+      adData
+  }
