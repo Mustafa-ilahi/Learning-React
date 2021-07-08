@@ -7,7 +7,6 @@ import todoIcon from './assets/todo.png';
 
 function App() {
   
-  const [text, setText] = useState('');
   const [list, setList] = useState([]);
   const [editMode, setEditMode] = useState(false);
   const [currentEditIndex, setCurrentEditIndex] = useState(-1)
