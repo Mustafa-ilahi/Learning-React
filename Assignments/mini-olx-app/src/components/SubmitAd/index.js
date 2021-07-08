@@ -8,36 +8,40 @@ function SubmitAd (){
     const [price, setPrice] = useState();
     const [userName, setUserName] = useState();
     const [contactNo, setContactNo] = useState();
-    const [img,setImages] = useState([]);
-    const [allImg, setAllImages] = useState([]);
-    const [allData, setAllData] = useState({})
+    const [img1, setImg1] = useState();
+    const [img2, setImg2] = useState();
+    const [img3, setImg3] = useState();
+    const [img4, setImg4] = useState();
+    const [img5, setImg5] = useState();
+    const [moreImg,setMoreImg] = useState(false);
     const submitAd = () => {
-        setAllData({adTitle: adTitle,
-            price: price,
-            allImg: allImg,
-            userName: userName,
-            contactNo: contactNo})
-        // addData();
-        // adImg();
+        // setAllData({
+        //     adTitle: adTitle,
+        //     price: price,
+        //     img: img,
+        //     userName: userName,
+        //     contactNo: contactNo
+        // })  
+        addData();
     }
-    console.log(allData)
-    // const addData = () => {
-    //     const db = firebase.firestore();
-    // db.collection('All-ads').add({
-
-    // }).then(res=>{
-    //       alert('ad data added',res)
-    //   }).catch(e=>{
-    //       alert(e.message)
-    //   })
-    // }
-
-    const adImg = () => {
-        const tempImg = [...allImg];
-        tempImg.push(img);
-        setAllImages(tempImg)
+    const addData = () => {
+        const db = firebase.firestore();
+    db.collection('All-ads').add({
+        adTitle: adTitle,
+        price: price,
+        img1: img1,
+        img2: img2,
+        img3: img3,
+        img4: img4,
+        img5: img5,
+        userName: userName,
+        contactNo: contactNo
+        }).then(res=>{
+          alert('ad data added',res)
+      }).catch(e=>{
+          alert(e.message)
+      })
     }
-    // console.log("All images URL", allImg)
     
     return(
         <div  style={{width:"50%",margin:"0 auto"}}>
@@ -47,12 +51,12 @@ function SubmitAd (){
                     <br />
                     <input type="number" placeholder="Enter Price"  onChange={(e)=>{setPrice(e.target.value)}} required/>
                     <br />
-                    <input placeholder="Enter Image URL" onChange={(e)=>setImages(e.target.value)}/> 
-                    {/* <input placeholder="Enter Image URL" onChange={(e)=>getImages(e)}/> 
-                    <input placeholder="Enter Image URL" onChange={(e)=>getImages(e)}/> 
-                    <input placeholder="Enter Image URL" onChange={(e)=>getImages(e)}/> 
-                    <input placeholder="Enter Image URL" onChange={(e)=>getImages(e)}/>  */}
-                    {/* <button onClick={adImg}>+</button> */}
+                    <input type="url" placeholder="Enter Image URL" onChange={(e)=>setImg1(e.target.value)}/> 
+                        <input placeholder="Enter Image URL" onChange={(e)=>setImg2(e.target.value)}/> 
+                       <input placeholder="Enter Image URL" onChange={(e)=>setImg3(e.target.value)}/> 
+                       <input placeholder="Enter Image URL" onChange={(e)=>setImg4(e.target.value)}/> 
+                       <input placeholder="Enter Image URL" onChange={(e)=>setImg5(e.target.value)}/> 
+                    {/* <button onClick={()=>{setMoreImg(true)}}>+</button> */}
                 <br />
                     <fieldset>
                         <legend>User Details</legend>
