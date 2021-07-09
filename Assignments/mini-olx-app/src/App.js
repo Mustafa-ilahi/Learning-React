@@ -9,13 +9,16 @@ function App() {
   return (
     <div className="App">
         <h1>Olx App</h1>
-        <ShowAdd />
+        {/* <ShowAdd /> */}
         { 
-        !submitAdStatus ?
-        <button onClick={()=> setSubmitAdStatus(true)}>+ Submit ad</button>   
+        submitAdStatus ?  <SubmitAd />
         :
-        <SubmitAd />  
-        }
+        <>
+        <button onClick={()=> setSubmitAdStatus(true)}>+ Submit ad</button> 
+        <ShowAdd />
+        </>
+      }
+        
     </div>
   );
 }

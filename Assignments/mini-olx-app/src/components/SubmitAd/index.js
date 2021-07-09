@@ -8,11 +8,8 @@ function SubmitAd (){
     const [price, setPrice] = useState();
     const [userName, setUserName] = useState();
     const [contactNo, setContactNo] = useState();
-    const [img1, setImg1] = useState();
-    const [img2, setImg2] = useState();
-    const [img3, setImg3] = useState();
-    const [img4, setImg4] = useState();
-    const [img5, setImg5] = useState();
+    const [allImg, setAllImg] = useState([]);
+    const [imgInput, setImgInput] = useState([]);
     const [allInfo,setAllInfo] = useState(false);
 
     const submitAd = () => {
@@ -20,11 +17,7 @@ function SubmitAd (){
             db.collection('All-ads').add({
                 adTitle: adTitle,
                 price: price,
-                img1: img1,
-                img2: img2,
-                img3: img3,
-                img4: img4,
-                img5: img5,
+                allImg: allImg,
                 userName: userName,
                 contactNo: contactNo
             }).then(res=>{
@@ -46,13 +39,19 @@ function SubmitAd (){
                     <br />
                     <input type="number" placeholder="Enter Price"  onChange={(e)=>{setPrice(e.target.value)}} required/>
                     <br />
-                    <input type="url" placeholder="Enter Image URL" onChange={(e)=>setImg1(e.target.value)}/> 
-                    {/* <button onClick={()=>{setMoreImg(["added"])}}>+</button> */}
-                        <input placeholder="Enter Image URL" onChange={(e)=>setImg2(e.target.value)}/> 
-                       <input placeholder="Enter Image URL" onChange={(e)=>setImg3(e.target.value)}/> 
-                       <input placeholder="Enter Image URL" onChange={(e)=>setImg4(e.target.value)}/> 
-                       <input placeholder="Enter Image URL" onChange={(e)=>setImg5(e.target.value)}/> 
-                <br />
+                    <input type="url" placeholder="Enter Image URL" onChange={(e)=>allImg.push(e.target.value)}/> 
+                    {
+                        imgInput.length > 3 ?
+                        <button disabled>+</button>
+                        :
+                        <button onClick={()=>{setImgInput([...imgInput,1])}}>+</button>
+                    }
+                    {imgInput.map((item,index)=>{
+                        return (
+                            <input type="url" placeholder="Enter Image URL" onChange={(e)=>allImg.push(e.target.value)}/>
+                        )  
+                    })}
+                    <br />
                     <fieldset>
                         <legend>User Details</legend>
                         <input placeholder="Your name"  onChange={(e)=>{setUserName(e.target.value)}}  required="required"/>
