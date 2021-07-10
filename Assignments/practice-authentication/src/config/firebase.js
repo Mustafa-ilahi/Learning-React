@@ -12,6 +12,7 @@ const firebaseConfig = {
   firebase.initializeApp(firebaseConfig);
 
   const db = firebase.firestore()
+  const storage = firebase.storage();
 
   const signUp = (email,password,fullName) => {
       firebase.auth().createUserWithEmailAndPassword(email, password)
@@ -41,8 +42,22 @@ const firebaseConfig = {
     return db.collection('users').get()
   }
 
+ async function storeImg (files){
+    const allFiles = []
+    for(let i = 0; i < files.length; i++){
+      let file = files[i];
+      const storageRef = storage.ref(`images/${file.name}`);
+      await storageRef.put(file);
+      const url = await storageRef.getDownloadURL();
+      allFiles.push(url)
+    }
+    await db.collection('ads').add({imageUrls : allFiles})
+    alert("Data added")
+  }
+
   export{
     signUp,
     login,
+    storeImg,
     getAllUsers
   }

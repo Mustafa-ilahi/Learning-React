@@ -110,3 +110,97 @@ Note: it doesn't generates random ID
 
 **** Getting data from firebase ****
 
+In firebase.js 
+function getAllUsers(){
+    return db.collection('users').get()
+  }
+
+Wo component jaha data lana ha
+
+    const [user,setUser] = useState([]);
+
+    useEffect(async ()=>{
+    const usersData = await getAllUsers()
+    const tempUsers = [];
+    usersData.forEach(doc =>{
+        // console.log(doc.data())
+        const obj = {...doc.data(), id:doc.id}
+        // console.log(obj)
+        tempUsers.push(obj);
+    })
+    setUser(tempUsers);
+    },[])
+
+
+
+user: all firebase data availabe in user
+
+
+**** For getting realtime data ****
+
+
+**** Firebase.js****
+function getAllUsers(callback){
+
+db.collection('users').onSnapShot(snapshot => {
+      snapshot.forEach(doc => {
+	const users= []
+                const obj = {...doc.data(), id:doc.id}
+                users.push(obj)
+})
+   callback(users)
+  })
+}
+
+
+**** Component.js ****
+ useEffect(async ()=>{
+ getAllUsers(data => {
+  setUsers(data)
+})  
+},[])
+
+
+
+
+****** Firebase hosting******
+
+1) npm install -g firebase-tools
+2)firebase login
+3)firebase init
+	i)Selecting option using spacebar
+	ii) Select project
+	iii)Enter public directory type (build)
+	iv)3 times NO
+4)npm run build
+5)firebase deploy
+
+
+
+
+****** Firebase Storage******
+
+const storage = firesbase.storage();
+
+async function storeImg(files) {
+const storageRef = storage.ref(`images/${files[0].name}`)
+await storageRef.put(files[0])
+const url = await storageRef.getDownloadURL()
+console.log('url===>',url)
+await db.collection('ads').add({imageUrl : url})
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

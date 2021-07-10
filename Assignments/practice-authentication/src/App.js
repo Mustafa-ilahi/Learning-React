@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import { useEffect, useState } from 'react';
-import { login, signUp } from './config/firebase'
+import { login, signUp, storeImg } from './config/firebase'
 import Dashboad from './components/Dashboard';
 import loader from './loader.gif';
 
@@ -31,6 +31,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
+        <input type="file" multiple onChange={(e) => storeImg(e.target.files)}/>
         {
           !userLoggedIn ?
           <>
