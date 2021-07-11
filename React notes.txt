@@ -192,9 +192,126 @@ await db.collection('ads').add({imageUrl : url})
 
 
 
+****** Redux ******
+1) Data can be shared in multiple components.
+2) Data is stored in Store.
+3) Whenever state updates in store, it will tell the component about change.
+4) Redux can be synced with localStorage
+
+
+====== Compenent ==> Actions ==> Reducers ==> Store
+
+Implementaion:
+1)Configuratrion
+2)Usage
+
+
+1)Configuration:
+i)Install two librarires (npm i redux react-redux)
+ii) Create a folder in src named as "store".
+iii) In this folder create "index.js".
+iv) In store we create two folders "actions" and "reducer".
+v) In both folder we need to create "index.js".
+
+**** Store--->index.js ****
+
+==> import { createStore } from 'redux'
+==> import reducer from './reducers'
+
+==> const store = createStore(reducer)
+==> export default store
+
+------------------ x ------------------
+
+**** App.js****
+
+==> import { Provider } from 'react-redux'
+==> import store from './store'
+
+==> <Provider store={store}> </Provider
+Note: All our work it should be in provider tag and we pass store as a props.
+
+------------------ x ------------------
+
+**** Actions--->index.js ****
+
+==> function storeUser(user){
+return {
+	type: 'ADD_USER',
+	data: user
+            }
+  }
+ 
+==> function removeUser(){
+return {
+	type: 'REMOVE_USER'
+            }
+  } 
+
+export{ 
+    storeUser,
+    removeUser
+}
+
+Note: Type name always be in Capital Letter, Type btati ha user ko k mai knse action se ayi hun.
+
+------------------ x ------------------
+
+
+**** Reducers--->index.js ****
+
+==> function reduer(state={}, action) {
+            switch(action.type){
+	case: 'ADD_USER' : {
+	   return {...state, user: action.data}
+	}
+	case: 'REMOVE_USER' : {
+	  return {...state, user: null}
+	}
+	default : {
+	return state	
+	}
+            }
+}
+
+export default reducer
+
+***** Basic configuration completed. *****
+Note: Provider hmesha parent file mai hoga. Jaha se action call hoga waha Provider nh hoskta, action hmesha child mai call hoga.
+
+------------------ x ------------------
 
 
 
+Now component se action: 
+**** App.js****
+
+import { storeUser } from './store/actions'
+import { useDispatch } from 'react-redux'
+
+const dispatch = useDispatch()
+
+===> dispatch(storeUser(user))
+
+Note: ye dispatch(storeUser(user)) waha call hoga jaha component se action mai data bhejna hai.
+
+
+**** From now store tk data chalagya ****
+
+------------------ x ------------------
+
+
+Getting data from store to another component
+
+ import { useSelector } from 'react-redux'
+
+const myUser = useSelector(state => state.user)
+
+
+Note: In useSelector ==> state we get all store data.
+
+
+------------------ x ------------------
 
 
 

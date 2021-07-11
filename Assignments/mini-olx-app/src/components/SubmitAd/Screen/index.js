@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
-import SubmitAd from '..';
 import { getAllAds } from '../../../config/firebase'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Button from 'react-bootstrap/Button'
 
 function ShowAdd() {
 
@@ -20,7 +21,7 @@ function ShowAdd() {
 console.log(allAds)
     return(
         <div>
-            {allAds.map(items =>{
+            {/* {allAds.map(items =>{
             const {userName,adTitle,contactNo,allImg,price} = items
                 return(
                     <div style={{border:"2px solid"}}>
@@ -33,7 +34,9 @@ console.log(allAds)
                         })}
                     </div>
                 )
-            })}
+            })} */}
+            <h1>Check</h1>
+              <Button variant="outline-primary">Primary</Button>
         </div>
     )
 }

@@ -3,3 +3,5 @@
 ./Assignments/quiz-app-react/node_modules
 ./Assignments/Todo-App/todo/node_modules
 .node_modules
+# Local Netlify folder
+.netlify
