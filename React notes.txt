@@ -210,7 +210,7 @@ Implementaion:
 i)Install two librarires (npm i redux react-redux)
 ii) Create a folder in src named as "store".
 iii) In this folder create "index.js".
-iv) In store we create two folders "actions" and "reducer".
+iv) In store we create two folders "actions" and "reducers".
 v) In both folder we need to create "index.js".
 
 **** Store--->index.js ****
@@ -228,7 +228,7 @@ v) In both folder we need to create "index.js".
 ==> import { Provider } from 'react-redux'
 ==> import store from './store'
 
-==> <Provider store={store}> </Provider
+==> <Provider store={store}> </Provider>
 Note: All our work it should be in provider tag and we pass store as a props.
 
 ------------------ x ------------------
@@ -253,7 +253,7 @@ export{
     removeUser
 }
 
-Note: Type name always be in Capital Letter, Type btati ha user ko k mai knse action se ayi hun.
+Note: Type name always be in Capital Letter, Type btati ha user ko k mai knse action se ayi hun, Action hmesha 2 cheezien return krega ek type or ek data
 
 ------------------ x ------------------
 
@@ -277,7 +277,7 @@ Note: Type name always be in Capital Letter, Type btati ha user ko k mai knse ac
 export default reducer
 
 ***** Basic configuration completed. *****
-Note: Provider hmesha parent file mai hoga. Jaha se action call hoga waha Provider nh hoskta, action hmesha child mai call hoga.
+Note: Provider hmesha parent file mai hoga. Jaha se action call hoga waha Provider nh hoskta, action hmesha child mai call hoga.(Provider sbse main file mai lagyga because ye sbka papa ha)
 
 ------------------ x ------------------
 
@@ -294,9 +294,10 @@ const dispatch = useDispatch()
 ===> dispatch(storeUser(user))
 
 Note: ye dispatch(storeUser(user)) waha call hoga jaha component se action mai data bhejna hai.
+user = wo data jo store mai save krwana hai.
 
 
-**** From now store tk data chalagya ****
+**** From this coding it will send data to store.****
 
 ------------------ x ------------------
 
@@ -312,6 +313,65 @@ Note: In useSelector ==> state we get all store data.
 
 
 ------------------ x ------------------
+
+
+********* Combine Reducer *********
+
+For multiple reducers we need to combine all reducers because createStore takes only one reducer. So we need to Combine Reducer. using: combineReducer. Combine krne k bd direct state mai data nh milega state k bd reducer name ayega 
+then sb data milega. Combine krne k bd data bh divide hoke ayega har reducer ka object banega usky andr data milega.
+
+
+const myUser = useSelector(state => state.reducerName.user)
+
+
+
+------------------ x ------------------
+
+
+
+********* Redux Thunk(allow async operations in action) *********
+
+1) npm install redux-thunk
+
+Store ki file mai integration hogi.
+i)Copy & paste code from readme.
+ii)In Action, firstly we return function on this function we pass dispatch. Or jo bh return krngy wo dispatch mai krngy.
+
+function storeAds(){
+    return async(dispatch) => {
+               const response = await fetch('jsonplaceholder api')
+	const json = await respone.json()
+	dispatch({
+	      type: 'STORE_AD',
+	      data: json
+	)}	
+          }
+}
+
+
+Note: Action k andr agr async km krwana hoto ye km krna hoga without middleware yeh nh chalega.
+
+
+------------------ x ------------------
+
+
+
+********* Redux Persist (sync redux with lcalStorage) *********
+
+i) npm install redux-persist
+ii) Goto its readme file and paste its code into store.
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
