@@ -363,21 +363,62 @@ ii) Goto its readme file and paste its code into store.
 
 
 
+------------------ x ------------------
+
+
+******* Routing *******
+URL based agr particular part change krna hoto wo routing kehlati hai.
+For Example: Facebook 
+
+1) Basic Routing
+2) Protected Routing(e.g: after logged in)
+3) Dynamic Routing
+
+
+1) npm install  react-router-dom.
+2) Create file router.js in config folder.
+3) import {
+BrowserRouter as Router,
+Switch,
+Route,
+} from react-router-dom
+
+4) https://reactrouter.com/web/guides/quick-start.
+
+5) Path mai btate hain kis bt pr knsa compononent render hojye
+
+6) For redirect after loggedIn
+i) import { useHistory } from 'react-router-dom'
+ii) const history = useHistory();
+iii) history.push('/dashboard')
+
+
+7) Agr parameter nilklne hoto we use useParams
+import { useParams } from 'react-router-dom'
+const { id } = useParams
+
+<Route path="/detail/:id">
+******* Dashboard *******
+
+onClick = {()=> history.push(`/detail/:${id}`)}
 
 
 
+------------------ x ------------------
+
+***** Protected Routing *****
+
+
+------------------ x ------------------
+
+
+var arr1 = "john".split(''); 
+var arr2 = arr1.reverse(); // nhoj
+var arr3 = "jones".split('');
+arr2.push(arr3) // ['n','h','o','j','j','o','n','e','s']
 
 
 
-
-
-
-
-
-
-
-
-
-
-
+// 4 n
+// 9 s 
 

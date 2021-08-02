@@ -1,0 +1,80 @@
+**** React Native ****
+
+***Expo***
+
+==> $npm install -g expo-cli
+
+==> $expo init FirstProject
+
+==> $cd FirstProject
+
+==> Select blank
+
+==> Download Android Studio
+
+==> Download Expo App into your mobile
+
+==> npm start
+
+==> Agr net same hai to select LAN agr different network hoto Tunnel select krngy
+
+==> Goto expo docs ==> API Reference (for opening camera from your device)
+
+
+**** RN Cli VS Expo ****
+
+RN CLI: (Permenant House)
+ ==> PROS:
+	1)Development is fast.
+	2)We can link our Native code with RN CLI.
+	3)You are opent to use vast collection of Libraries contributed by the developers.
+	4) Build(apk/ipa) size is less usually.
+
+  ==> CONS:
+           1)We neeed more effort for this setup.
+            Android: Android Studio (SDK)
+            iOS: Xcode
+           2)Less build errors
+           3)External hardware related libraries need linking
+	that's why difficult to integrate.
+	4)You will need MAC for iOS development
+	    *** Purchase MAC ***
+	  (1)Hackintosh => It's a software that will make convert your windows into MAC)
+	   (2) VMware)
+	   (3) TeamViewer)
+	5) Difficult to maintain.
+EXPO : (Rent House)
+ ==> PROS:
+	1)We need very little effort for the setup. We Don't
+	   need SDK installation before it's setup.
+	2)Less build errors
+                3)External hardware related libraries don't need linking
+	   that's why easy to integrate.
+	4)You don't need MAC for iOS development but for the final buid, you will
+	    need MAC.
+	5) Easy to maintain.
+
+  ==> CONS:
+	1)Development is little bit slow.
+	2)We can't link our Native code with RN CLI.
+	3)You are limited to Expo Libraries.
+	4) Build(apk/ipa) size is more usually.
+
+
+			---------------- x ----------------
+
+
+==> WebView for converting website into app
+
+==> NetInfo for checking internet connection
+
+
+***** React Native Navigation *****
+
+==> Goto React Navigation
+
+==> src ==> config ==> navigation.js
+
+==> 1) Stack Navigation
+==> 2) Tab Navigation
+==> 3) Drawer Navigation
