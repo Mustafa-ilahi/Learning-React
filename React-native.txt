@@ -78,3 +78,99 @@ EXPO : (Rent House)
 ==> 1) Stack Navigation
 ==> 2) Tab Navigation
 ==> 3) Drawer Navigation
+
+
+			---------------- x ----------------
+
+
+
+
+		**** Login With Facebook Expo CLI****
+
+==> Goto Expo Api and select Fb
+
+==> Goto fb developer ==>Create App
+
+==> Select first app 
+
+==> After creating app goto settings ==> basic ==> add platform
+
+==> Click on android
+
+==> keyhashes==> rRW++LUjmZZ+58EbN5DVhGAnkX4=
+
+==> then save changes
+
+==> generate privacy policy from online privacy policy generator
+
+==> then save changes
+
+==> import * as Facebook from 'expo-facebook'; ==> from expo
+
+==> paste code from expo and also paste 
+
+
+			---------------- x ----------------
+
+
+			**** Implementing Map ****
+
+==> Goto Expo docs ==> MapView ==> Install
+
+==> Import mapView and copy code
+
+
+
+			---------------- x ----------------
+
+			**** Implementing Marker ****
+
+==> goto react native maps (github link)
+
+==> url mai @ k bd latitude ha or usky bd longitude
+
+==> <Marker
+                coordinate={{latitude:24.9323526,longitude:67.0872638}}
+                />
+
+==> Is se marker ajayega marker must be in MapView tag
+
+==> Initial customize location lani hoto we use region:
+
+for example: We are creating  state and pass it on region component as a prop
+
+const [region, setRegion] = useState({
+            latitude: 24.9323526,
+            longitude: 67.0872638,
+            latitudeDelta: 0.0922,
+            longitudeDelta: 0.0421,
+    })
+
+ <MapView region={region}> </MapView>
+
+
+			---------------- x ----------------
+
+			 **** For current location ****
+
+==> Goto expo docs then copy and paste
+
+==> For set current location to state 
+const {coords:{latitude,longitude}} = location;
+setRegion({...region, latitude,longitude});
+
+
+			---------------- x ----------------
+
+**** For realtime location ****
+
+==> we use ==> Location.watchPositionAsync
+
+			--------------- x ----------------
+			**** For getting area name
+
+==>Goto forsqaure
+
+==> Developers wali side pr click on API reference
+
+
