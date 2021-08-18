@@ -174,3 +174,18 @@ setRegion({...region, latitude,longitude});
 ==> Developers wali side pr click on API reference
 
 
+
+			--------------- x ----------------
+
+			**** Firebase Integration Expo ****
+==>expo install firebase
+
+==> Copy paste code from expo docs 
+
+==> Then create new project on firebase
+		
+
+			--------------- x ----------------
+
+==> Geo query for selecting only nearest drivers
+
