@@ -422,3 +422,69 @@ arr2.push(arr3) // ['n','h','o','j','j','o','n','e','s']
 // 4 n
 // 9 s 
 
+
+
+------------------ x -----------------------
+
+**** Class Components ****
+
+import React, {Component} from 'react'
+
+class DropOff extends Component {
+
+//Making State
+state={ text: "helloworld" }
+
+
+// For inital stage
+componentDidMount(){}
+
+//For updation
+componentDidUpdate(){}
+
+//For unmounting
+componentWillUnmount(){}
+
+render(){
+
+	return(
+	<h1>Drop off component</h1>
+	)
+}
+}
+
+export default DropOff;
+
+//For updating state we use this.setState({text: "new text"})
+
+
+//Normal function apna this deta hai or agr parent function ka this chahye hoto ()=> aise call krngy
+
+==> in normal function when we console this it targets the function this 
+{()=> this.onSubmit}
+==> but in arrow function when we console this its targets to its parents
+==> we can also get parent this through {this.onSubmit.bind(this, firstParameter)}
+==> Did update har state ya props k update pr chlega.
+
+**** Getting props ****
+using this.props.dataName
+
+--------------- x ---------------
+
+kisi bh state k change pr kch km krwana hoto prevState or new state ko compare krwangy
+for example:
+componentDidUpdate(prevProps,prevState){
+   console.log('prevState',prevState.text);
+   console.log('new state',this.state.text);
+   if(prevState.text !== this.state.text){
+    alert('State updated')
+}
+}
+ 
+
+
+--------------- x ---------------
+
+
+
+

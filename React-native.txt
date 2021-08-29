@@ -189,3 +189,41 @@ setRegion({...region, latitude,longitude});
 
 ==> Geo query for selecting only nearest drivers
 
+
+			--------------- x ----------------
+			For creating android build
+
+==> Goto expo docs==> Building Standalone Apps ==> follow steps
+
+==> keystore(chabi hai jo hamesha sambhal kr rkhni ha otherwise playstore pr app push nh hogi).
+
+
+			--------------- x ----------------
+
+			      React Native CLI
+
+1) Select Os 
+2) Install chocloatey
+3) Node,JDK install the command which is in this section but except nodejs
+===> choco install -y openjdk8
+4) Install Android Studio
+5) Open android studio ==> android studio ==> check packages from reactnative docs-environment setup
+6) Goto this pc properties and goto advanced settings ==> environmental setup
+7) Creating a new React Native CLI project
+8) $ abd devices (after connecting )
+9) After that we have to run the project
+
+==> react native run android for creating build but agr start wali mai error agaya to start dobra kro
+				
+			--------------- x ----------------
+		AutoLinking (Kbh kbh dhoka deti after that we chk manually)
+
+1) react-native link library ka name
+				
+			--------------- x ----------------
+
+For refresh $ adb shell input keyevent 82
+
+			--------------- x ----------------
+Updating your app without updating it on play store
+==> use expo OTA(Over the air) 

@@ -1,3 +1,9 @@
-https://jovial-kepler-8c2867.netlify.app/ (todo)
-https://fbpostclone.netlify.app/
-https://quiz-app-a353a.web.app/
+==> Todo ==>https://jovial-kepler-8c2867.netlify.app/ 
+
+==> Fb Post Clone ==> https://fbpostclone.netlify.app/
+
+==> Quiz App ==> https://quiz-app-a353a.web.app/
+
+==> User-listing ==> https://userlisting.netlify.app/
+
+==> Event management ==> https://eventmanagement-template.netlify.app/
