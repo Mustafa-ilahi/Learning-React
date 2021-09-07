@@ -199,7 +199,7 @@ await db.collection('ads').add({imageUrl : url})
 4) Redux can be synced with localStorage
 
 
-====== Compenent ==> Actions ==> Reducers ==> Store
+====== Component ==> Actions ==> Reducers ==> Store
 
 Implementaion:
 1)Configuratrion
@@ -469,7 +469,7 @@ export default DropOff;
 **** Getting props ****
 using this.props.dataName
 
---------------- x ---------------
+			--------------- x ---------------
 
 kisi bh state k change pr kch km krwana hoto prevState or new state ko compare krwangy
 for example:
@@ -483,8 +483,10 @@ componentDidUpdate(prevProps,prevState){
  
 
 
---------------- x ---------------
+			--------------- x ---------------
+
+	
+	        		 ****** Recursion ****** 
 
 
-
-
+Koi function jo usi k andr call horha ho it's called recursion.

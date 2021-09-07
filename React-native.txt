@@ -27,7 +27,7 @@ RN CLI: (Permenant House)
  ==> PROS:
 	1)Development is fast.
 	2)We can link our Native code with RN CLI.
-	3)You are opent to use vast collection of Libraries contributed by the developers.
+	3)You are open to use vast collection of Libraries contributed by the developers.
 	4) Build(apk/ipa) size is less usually.
 
   ==> CONS:
