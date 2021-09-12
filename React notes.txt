@@ -202,7 +202,7 @@ await db.collection('ads').add({imageUrl : url})
 ====== Component ==> Actions ==> Reducers ==> Store
 
 Implementaion:
-1)Configuratrion
+1)Configuration
 2)Usage
 
 
