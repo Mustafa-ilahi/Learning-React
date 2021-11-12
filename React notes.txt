@@ -495,3 +495,11 @@ Koi function jo usi k andr call horha ho it's called recursion.
 
 ****** Node Js ******
 https://www.section.io/engineering-education/building-a-basic-api-with-nodejs/
+
+
+****** Github ******
+after some changes==>
+1) apni branch mai add, commit and push
+2) git checkout master
+3) git merge apnibranch
+4) git push origin master
