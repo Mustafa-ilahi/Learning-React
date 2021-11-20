@@ -227,3 +227,10 @@ For refresh $ adb shell input keyevent 82
 			--------------- x ----------------
 Updating your app without updating it on play store
 ==> use expo OTA(Over the air) 
+
+			--------------- x ----------------
+Error: ENOENT: no such file or directory, scandir
+Fix:
+$npm update
+$npm install
+$npm rebuild node-sass
