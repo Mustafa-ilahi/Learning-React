@@ -234,3 +234,13 @@ Fix:
 $npm update
 $npm install
 $npm rebuild node-sass
+
+
+
+----------Error fix-------------
+This has fixed my issue :
+
+   ndk {
+        abiFilters 'armeabi-v7a', 'x86'
+    }
+This should be placed build.gradle defaultConfig section.
