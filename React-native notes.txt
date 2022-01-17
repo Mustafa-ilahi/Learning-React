@@ -244,3 +244,10 @@ This has fixed my issue :
         abiFilters 'armeabi-v7a', 'x86'
     }
 This should be placed build.gradle defaultConfig section.
+
+
+------------ useEffect isn't working after go back from child to parent(FIXED)------------ 
+import {useIsFocused} from '@react-navigation/native';
+  const isVisible = useIsFocused();
+  useEffect(() => {}, [isVisible]);
+
