@@ -251,3 +251,8 @@ import {useIsFocused} from '@react-navigation/native';
   const isVisible = useIsFocused();
   useEffect(() => {}, [isVisible]);
 
+-------- firebase in cli ----------
+1)Create project on firebase
+2)Select Android
+3)Download google-service.json and paste it into android/app
+4)Add (apply plugin: 'com.google.gms.google-services') this line on android/app/build.gradle on line num 2
