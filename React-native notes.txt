@@ -256,3 +256,7 @@ import {useIsFocused} from '@react-navigation/native';
 2)Select Android
 3)Download google-service.json and paste it into android/app
 4)Add (apply plugin: 'com.google.gms.google-services') this line on android/app/build.gradle on line num 2
+
+
+----------- React Native Paper -----------
+If you are going to customize SearchBar you have to use inputStyle props
