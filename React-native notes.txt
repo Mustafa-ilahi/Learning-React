@@ -260,3 +260,13 @@ import {useIsFocused} from '@react-navigation/native';
 
 ----------- React Native Paper -----------
 If you are going to customize SearchBar you have to use inputStyle props
+
+----------- React Native App run without cable ---------
+1) $ cd android
+2) $ gradlew assembleDegbug
+3) Goto Android --> app --> build --> outputs --> apk  --> debug --> app-debug.apk
+copy this file and paste on your device
+4) $ ipconfig (Run it into cmd)
+5) Copy IPv4 
+6)Run app Goto settings click on "Debug server & port1 for device"
+7) paste IPv4 ":8081"(:8081 must be add after IPv4 e.g: 192.168.18.129:8081)
