@@ -270,3 +270,4 @@ copy this file and paste on your device
 5) Copy IPv4 
 6)Run app Goto settings click on "Debug server & port1 for device"
 7) paste IPv4 ":8081"(:8081 must be add after IPv4 e.g: 192.168.18.129:8081)
+8) $npm start
