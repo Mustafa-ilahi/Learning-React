@@ -503,3 +503,65 @@ after some changes==>
 2) git checkout master
 3) git merge apnibranch
 4) git push origin master
+
+
+****** Colors task ******
+ let [colors, setColors] = useState([
+    "blue",
+    "yellow",
+    "orange",
+    "red",
+    "green",
+  ]);
+  let [names, setNames] = useState([
+    {
+      name: "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.",
+    },
+    {
+      name: "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.",
+    },
+    {
+      name: "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.",
+    },
+    {
+      name: "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.",
+    },
+    {
+      name: "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.",
+    },
+    {
+      name: "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.",
+    },
+    {
+      name: "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.",
+    },
+    {
+      name: "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.",
+    },
+    {
+      name: "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.",
+    },
+    {
+      name: "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.",
+    },
+  ]);
+  return (
+    <div>
+      {names.map((item, index) => {
+        return (
+          <div
+            style={{
+              margin: 5,
+              padding: 10,
+              backgroundColor: colors[index % colors.length],
+            }}
+            key={index}
+          >
+            {item.name}
+          </div>
+        );
+      })}
+    </div>
+  );
+}
+
