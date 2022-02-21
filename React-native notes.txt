@@ -271,3 +271,26 @@ copy this file and paste on your device
 6)Run app Goto settings click on "Debug server & port1 for device"
 7) paste IPv4 ":8081"(:8081 must be add after IPv4 e.g: 192.168.18.129:8081)
 8) $npm start
+
+
+---------- React native optimization ----------
+How to optimize react native app
+1)Infinite scroll
+2)Application size and performance on Android
+3)Rendering Native views faster
+4)Delay in updating UI in Android
+5)Improving React Native app Launch time
+6)Use smaller images
+7)Use PNG as opposed to JPG
+8)Image Placeholders in React Native
+9)Avoid Use of ScrollView Use FlatList or SectionList to render large lists in React Native
+10)Remove all console statements
+11)Remove unnecessary libraries and features
+12)Use Hermes(Hermes helps reduce the download size of the APK)
+13)Avoid Passing Inline Functions as Props
+14)Optimize Android App Size
+	i)Set the boolean flag enableProguardInReleaseBuilds to true, 
+	adjust the ProGuard rules to your needs and test release builds for crashes.
+	ii)Also, set enableSeparateBuildPerCPUArchitecture to true.
+15)Optimize React Code
+
