@@ -294,3 +294,8 @@ How to optimize react native app
 	ii)Also, set enableSeparateBuildPerCPUArchitecture to true.
 15)Optimize React Code
 
+-------------  Conflicting configuration : ------------- 
+   ndk {
+            abiFilters "armeabi-v7a", "x86", "arm64-v8a", "x86_64"
+            abiFilters.clear()
+        }
