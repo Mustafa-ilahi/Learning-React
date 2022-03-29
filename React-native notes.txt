@@ -299,3 +299,13 @@ How to optimize react native app
             abiFilters "armeabi-v7a", "x86", "arm64-v8a", "x86_64"
             abiFilters.clear()
         }
+
+
+
+-------------------- 
+
+ let test = await AsyncStorage.getItem('Id');
+    let temp = test ? JSON.parse(test) : [];
+    console.log('test----->', temp);
+     temp.push(response.records[RandomIndex].id);
+      await AsyncStorage.setItem('Id', JSON.stringify(temp));
