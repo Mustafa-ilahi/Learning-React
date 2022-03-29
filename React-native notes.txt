@@ -309,3 +309,4 @@ How to optimize react native app
     console.log('test----->', temp);
      temp.push(response.records[RandomIndex].id);
       await AsyncStorage.setItem('Id', JSON.stringify(temp));
+Agay jaha jaha use krna ha waha waha JSON.parse(test) krnaa prega
