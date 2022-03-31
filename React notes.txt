@@ -565,3 +565,13 @@ after some changes==>
   );
 }
 
+delete function----------->>
+const tempList = [...commentsData];
+    tempList.splice(index, 1);
+    this.setState({
+      commentsData: tempList,
+    });
+    await deleteComment('Reviews', objectId);
+  export async function deleteComment(collection, doc) {
+  	firestore().collection(collection).doc(doc).delete();
+}
