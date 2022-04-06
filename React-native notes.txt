@@ -310,3 +310,8 @@ How to optimize react native app
      temp.push(response.records[RandomIndex].id);
       await AsyncStorage.setItem('Id', JSON.stringify(temp));
 Agay jaha jaha use krna ha waha waha JSON.parse(test) krnaa prega
+
+
+
+----------------
+npx react-native start --reset-cache
