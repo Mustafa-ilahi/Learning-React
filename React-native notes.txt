@@ -302,7 +302,7 @@ How to optimize react native app
 
 
 
--------------------- 
+-------------------- X --------------------
 
  let test = await AsyncStorage.getItem('Id');
     let temp = test ? JSON.parse(test) : [];
@@ -313,5 +313,8 @@ Agay jaha jaha use krna ha waha waha JSON.parse(test) krnaa prega
 
 
 
-----------------
+---------------- X --------------------
 npx react-native start --reset-cache
+---------------- X --------------------
+justify-content is for horizontal ---> (left to right)
+align-items is for vertical (top to bottom)
