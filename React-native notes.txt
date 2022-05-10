@@ -318,3 +318,9 @@ npx react-native start --reset-cache
 ---------------- X --------------------
 justify-content is for horizontal ---> (left to right)
 align-items is for vertical (top to bottom)
+
+
+---------- Return to same page ---------- 
+this.props.navigation.addListener('focus', async () => {
+      this.computeOperations();
+    });
