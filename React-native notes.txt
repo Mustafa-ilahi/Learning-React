@@ -321,6 +321,8 @@ align-items is for vertical (top to bottom)
 
 
 ---------- Return to same page ---------- 
-this.props.navigation.addListener('focus', async () => {
-      this.computeOperations();
-    });
+import { useIsFocused } from "@react-navigation/native";
+ const isFocused = useIsFocused();
+   useEffect(() => {
+    getData();
+  }, [isFocused]);
