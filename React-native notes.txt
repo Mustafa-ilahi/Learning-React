@@ -326,3 +326,8 @@ import { useIsFocused } from "@react-navigation/native";
    useEffect(() => {
     getData();
   }, [isFocused]);
+  
+  
+  
+---------- Axios network error ---------- 
+Change local host to 10.0.2.2
