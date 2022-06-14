@@ -331,3 +331,49 @@ import { useIsFocused } from "@react-navigation/native";
   
 ---------- Axios network error ---------- 
 Change local host to 10.0.2.2
+
+
+
+-----------For multiple Reducers-----------
+-->store.js
+import { applyMiddleware, createStore } from "redux";
+import reducers from './Reducers'
+import { persistStore, persistReducer } from "redux-persist";
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import { composeWithDevTools } from 'redux-devtools-extension';
+import thunk from "redux-thunk";
+const persistConfig = {
+  key: "root",
+  storage: AsyncStorage,
+};
+const presistedReducer = persistReducer(persistConfig, reducers );
+const store = createStore(presistedReducer,
+composeWithDevTools(applyMiddleware(thunk)));
+const persistor = persistStore(store);
+export default store;
+export { persistor };
+
+-->reducers.js
+import {combineReducers} from 'redux'
+import themeReducer from './theme-reducer'
+import signInReducer from './auth/signIn-reducer'
+const reducers=combineReducers({
+    themeReducer:themeReducer,
+    signInReducer:signInReducer
+})
+export default reducers
+
+-->reducer.js
+const reducer =  (state ='dark', action) => {
+    switch (action.type) {
+        case 'dark':
+             return 'dark';
+            break;
+        case 'light':
+            return 'light';
+            break;
+        default:
+            return state;
+    }
+}
+export default reducer;
