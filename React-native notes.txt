@@ -377,3 +377,7 @@ const reducer =  (state ='dark', action) => {
     }
 }
 export default reducer;
+
+
+---------------- Get/Send/Delete Messages
+https://enappd.com/blog/send-read-and-delete-sms-in-react-native/107/
