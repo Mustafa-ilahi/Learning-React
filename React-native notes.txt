@@ -381,3 +381,8 @@ export default reducer;
 
 ---------------- Get/Send/Delete Messages
 https://enappd.com/blog/send-read-and-delete-sms-in-react-native/107/
+
+
+
+--------------Tinder swipe------------------
+https://github.com/Gauravbhadauria/allreactnative/blob/master/src/screens/TinderSwipeDemo.js
